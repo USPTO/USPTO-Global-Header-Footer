@@ -34,6 +34,11 @@
         background-color: @color-header-background;
         height: @height-header-top;
     }
+    .nav {
+        background: @color-header-background;}
+    .container a.uspto-logo {
+        margin-left:8px;
+    }
     a.uspto-logo {
         background: transparent url('@{image-root}/logo-micro.png') no-repeat left center;
         background-size: contain;
@@ -143,16 +148,21 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 }
 
 .collapse-header {
+    .container {
+        #headerSmallHeading {
+            margin-left:0px;
+        }
+    }
     #headerSmallHeading {
         display: inline-block;
         margin-left: -8px;
-    }
+    }    
 } // .collapse-header
 
 .headerbar-smallHeading {
     display: inline-block;
     color: @color-dark-grey;
-    padding: 5px 19px;
+    padding: 10px 19px;
     font-size: 16px;
     background-color: #E2E2E2;
 }
@@ -160,7 +170,17 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 /* header middle */
 
 .uspto-header-middle {
-    .container,
+    background-color: @color-header-middle;
+    .container {
+        background-color: @color-header-middle;
+        span {
+            margin-left: 0px;
+            display: inline-block;
+            padding-bottom: 3px;
+            font-size: 32px;
+        }
+    }
+
     .container-fluid {
         background-color: @color-header-middle;
         span {
@@ -179,6 +199,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 /* header bottom */
 
 .uspto-header-bottom {
+    background-color: @color-bottom-background;
     .container,
     .container-fluid {
         background-color: @color-bottom-background;
@@ -191,8 +212,9 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
         font-size: 14px;
         background-color: @color-bottom-background;
         border: none;
-        padding: 6px 15px 6px 12px;
+        padding: 12px 15px 11px 12px;
         line-height: 1.4;
+        min-height: auto;
     }
     button > a {
         color: @color-white;
@@ -225,7 +247,7 @@ body {
          * overlay other content unless you add padding to the top of the <body>. This
          * is because fixed position elements are removed from the document flow.
          */
-        padding-top: 100px;
+        padding-top: 120px;
         /*
          * Position the footer when there's not enough page content to push it off
          * the screen.
@@ -233,11 +255,11 @@ body {
          * fill the page and push the footer out of sight
          */
         min-height: calc(100vh - 110px);
-        .container,
-        .container-fluid {
-            margin-left: 15px;
-            margin-right: 15px;
-        }
+        //.container,
+        //.container-fluid {
+          //  margin-left: 15px;
+        //    margin-right: 15px;
+        //}
     } // main
     footer {
         background-color: #363636;
@@ -267,7 +289,7 @@ body {
 
     #headerSmallHeadingMobile {
         display: inline-block;
-        height: 37px;
+        height: 48px;
     }
 
     .uspto-header-middle {
@@ -275,6 +297,7 @@ body {
         .container,
         .container-fluid {
             font-size: 26px;
+
         }
     } // .uspto-header-middle
 
@@ -299,7 +322,7 @@ body {
              * overlay other content unless you add padding to the top of the <body>. This
              * is because fixed position elements are removed from the document flow.
              */
-            padding-top: 60px;
+            padding-top: 80px;
             /*
              * Position the footer when there's not enough page content to push it off
              * the screen.
